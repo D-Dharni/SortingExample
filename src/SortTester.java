@@ -110,6 +110,6 @@ public class SortTester {
 
         // Test Merge Sort
         // TODO: Uncomment to run this test
-//        testMergeSort(data);
+        testMergeSort(data);
     }
 }

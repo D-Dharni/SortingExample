@@ -7,7 +7,7 @@
  */
 public class SortingAlgorithms {
     // Change this value to change testing size
-    public static final int TEST_SIZE = 10;
+    public static final int TEST_SIZE = 1000;
 
     // Change this value to change the range of numbers generated
     public static final int MAX_NUMBER_SIZE = 100;
@@ -15,16 +15,62 @@ public class SortingAlgorithms {
     // Bubble Sort
     public static void bubbleSort(int[] arr) {
         // TODO: Implement bubble sort
+        double timeBefore = System.currentTimeMillis();
+        int length = arr.length;
+        boolean swapped;
+
+        for (int i = 0; i < length - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < length - 1 - i; j++) {
+                if (arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+        double timeAfter = System.currentTimeMillis();
+        System.out.println(timeAfter - timeBefore);
     }
 
     // Selection Sort
     public static void selectionSort(int[] arr) {
         // TODO: Implement selection sort
+        int length = arr.length;
+        double timeBefore = System.currentTimeMillis();
+        for (int i = 0; i < length - 1; i++) {
+            int smallestIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[smallestIndex]) {
+                    smallestIndex = j;
+                }
+            }
+
+            int temp = arr[smallestIndex];
+            arr[smallestIndex] = arr[i];
+            arr[i] = temp;
+        }
+        double timeAfter = System.currentTimeMillis();
+        System.out.println(timeAfter - timeBefore);
     }
 
     // Merge Sort
     public static void mergeSort(int[] arr) {
         // TODO: Implement merge sort
+        // Base case
+        if (arr.length < 2) {
+            return;
+        }
+
+        // split
+
+        // sort both halves
+
+        // merge together
     }
 
     private static void mergeSortHelper(int[] arr, int left, int right) {
